@@ -1,0 +1,167 @@
+.katalog {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--medzera);
+    align-items: start;
+}
+
+.filtre {
+    padding: 16px;
+    background-color: var(--farba-panel);
+    border: 1px solid var(--farba-okraj);
+    border-radius: var(--zaoblenie);
+}
+
+.filtre h2 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.filtre fieldset {
+    border: none;
+    margin-bottom: 14px;
+}
+
+.filtre legend {
+    margin-bottom: 4px;
+}
+
+.filtre label {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.cena {
+    display: flex;
+    gap: 10px;
+}
+
+.cena input {
+    width: 100%;
+    min-width: 0;
+    padding: 4px 8px;
+    border: 1px solid var(--farba-okraj);
+    border-radius: 4px;
+    font: inherit;
+    text-align: center;
+}
+
+.tlacidlo-filtrovat {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+.zoznam-hlavicka {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.zoznam-hlavicka h1 {
+    font-size: 1.2rem;
+}
+
+.pocet {
+    color: var(--farba-text-slaby);
+    font-weight: normal;
+}
+
+.zoradenie select {
+    padding: 4px 8px;
+    border: 1px solid var(--farba-okraj);
+    border-radius: 4px;
+    background-color: var(--farba-tlacidlo);
+    font: inherit;
+    font-weight: bold;
+}
+
+.karty {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.karta {
+    padding: 10px;
+    background-color: var(--farba-panel);
+    border: 1px solid var(--farba-okraj);
+    border-radius: var(--zaoblenie);
+}
+
+.karta-obrazok {
+    height: 110px;
+    margin-bottom: 10px;
+}
+
+.karta h2 {
+    font-size: 1rem;
+}
+
+.karta-komponenty {
+    color: var(--farba-text-slaby);
+    font-size: 0.9rem;
+}
+
+.karta-spodok {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.cena-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.tlacidlo-male {
+    padding: 2px 10px;
+    font-size: 0.8rem;
+}
+
+.strankovanie {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 16px;
+}
+
+.strankovanie .tlacidlo {
+    padding: 4px 10px;
+    font-weight: normal;
+}
+
+.strankovanie .aktivna {
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .katalog {
+        grid-template-columns: 1fr;
+    }
+
+    .filtre form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0 16px;
+    }
+
+    .tlacidlo-filtrovat {
+        grid-column: 1 / -1;
+    }
+
+    .karty {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .karty {
+        grid-template-columns: 1fr;
+    }
+}
