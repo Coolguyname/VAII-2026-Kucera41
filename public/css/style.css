@@ -1,0 +1,170 @@
+:root {
+    --farba-hlavicka: #a3a3a3;
+    --farba-panel: #a8a8a8;
+    --farba-placeholder: #d9d9d9;
+    --farba-tlacidlo: #e6e6e6;
+    --farba-text: #111111;
+    --farba-text-slaby: #4a4a4a;
+    --farba-okraj: #666666;
+    --zaoblenie: 6px;
+    --medzera: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--farba-text);
+    background-color: #ffffff;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.tlacidlo {
+    display: inline-block;
+    padding: 4px 14px;
+    background-color: var(--farba-tlacidlo);
+    border: 1px solid var(--farba-okraj);
+    border-radius: 4px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tlacidlo:hover {
+    background-color: #ffffff;
+}
+
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background-color: var(--farba-placeholder);
+}
+
+.placeholder-x {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.hlavicka {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 48px;
+    padding: 12px var(--medzera);
+    background-color: var(--farba-hlavicka);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.logo-obrazok {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--farba-placeholder);
+    border: 1px solid var(--farba-okraj);
+    font-size: 0.6rem;
+    font-weight: normal;
+}
+
+.navigacia ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+}
+
+.navigacia a {
+    font-weight: bold;
+}
+
+.navigacia a:hover,
+.navigacia a.aktivna {
+    text-decoration: underline;
+}
+
+.ucet {
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+}
+
+main {
+    flex: 1;
+    padding: var(--medzera);
+}
+
+.obsah-stranky {
+    min-height: 60vh;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.pata {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px var(--medzera);
+    background-color: var(--farba-hlavicka);
+}
+
+.pata ul {
+    display: flex;
+    gap: 6px;
+}
+
+.pata li + li::before {
+    content: "·";
+    margin-right: 6px;
+}
+
+.pata a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --medzera: 14px;
+    }
+
+    .hlavicka {
+        gap: 12px 16px;
+    }
+
+    .navigacia {
+        order: 3;
+        width: 100%;
+    }
+
+    .pata {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

@@ -1,0 +1,162 @@
+<?php
+
+/** @var \Framework\Support\LinkGenerator $link */
+?>
+
+<div class="katalog">
+
+    <aside class="filtre">
+        <h2>Filtre</h2>
+        <form action="#">
+            <fieldset>
+                <legend>Cena €</legend>
+                <div class="cena">
+                    <input type="number" name="cena-od" placeholder="od" min="0" aria-label="Cena od">
+                    <input type="number" name="cena-do" placeholder="do" min="0" aria-label="Cena do">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Procesor</legend>
+                <label><input type="checkbox" name="procesor" value="intel"> Intel</label>
+                <label><input type="checkbox" name="procesor" value="amd"> AMD</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Operačná pamäť</legend>
+                <label><input type="checkbox" name="pamat" value="ddr4"> DDR4</label>
+                <label><input type="checkbox" name="pamat" value="ddr5"> DDR5</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Grafická karta</legend>
+                <label><input type="checkbox" name="grafika" value="nvidia"> NVIDIA</label>
+                <label><input type="checkbox" name="grafika" value="amd"> AMD</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Typ úložiska</legend>
+                <label><input type="checkbox" name="uloziste" value="ssd"> SSD</label>
+                <label><input type="checkbox" name="uloziste" value="hdd"> HDD</label>
+                <label><input type="checkbox" name="uloziste" value="ssd-hdd"> SSD + HDD</label>
+            </fieldset>
+
+            <button type="submit" class="tlacidlo tlacidlo-filtrovat">Filtrovať</button>
+        </form>
+    </aside>
+
+    <section class="zoznam">
+        <div class="zoznam-hlavicka">
+            <h1>Počítače <span class="pocet">(24)</span></h1>
+            <label class="zoradenie">
+                Zoradiť:
+                <select name="zoradit">
+                    <option>cena</option>
+                    <option>názov</option>
+                    <option>najnovšie</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="karty">
+            <article class="karta">
+                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
+                <h2>Herný PC</h2>
+                <p class="karta-komponenty">RTX 4060 · 32 GB DDR5</p>
+                <div class="karta-spodok">
+                    <span class="cena-text">999 €</span>
+                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
+                </div>
+            </article>
+
+            <article class="karta">
+                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
+                <h2>Kancelársky PC</h2>
+                <p class="karta-komponenty">Intel i3 · 16 GB DDR4</p>
+                <div class="karta-spodok">
+                    <span class="cena-text">449 €</span>
+                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
+                </div>
+            </article>
+
+            <article class="karta">
+                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
+                <h2>Herný Dragon Pro</h2>
+                <p class="karta-komponenty">RTX 5070 · 64 GB DDR5</p>
+                <div class="karta-spodok">
+                    <span class="cena-text">2089 €</span>
+                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
+                </div>
+            </article>
+
+            <article class="karta">
+                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
+                <h2>Herný PC</h2>
+                <p class="karta-komponenty">RTX 4060 · 32 GB DDR5</p>
+                <div class="karta-spodok">
+                    <span class="cena-text">999 €</span>
+                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
+                </div>
+            </article>
+
+            <article class="karta">
+                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
+                <h2>Kancelársky PC</h2>
+                <p class="karta-komponenty">Intel i3 · 16 GB DDR4</p>
+                <div class="karta-spodok">
+                    <span class="cena-text">449 €</span>
+                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
+                </div>
+            </article>
+
+            <article class="karta">
+                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
+                <h2>Herný Dragon Pro</h2>
+                <p class="karta-komponenty">RTX 5070 · 64 GB DDR5</p>
+                <div class="karta-spodok">
+                    <span class="cena-text">2089 €</span>
+                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
+                </div>
+            </article>
+
+            <article class="karta">
+                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
+                <h2>Herný PC</h2>
+                <p class="karta-komponenty">RTX 4060 · 32 GB DDR5</p>
+                <div class="karta-spodok">
+                    <span class="cena-text">999 €</span>
+                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
+                </div>
+            </article>
+
+            <article class="karta">
+                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
+                <h2>Kancelársky PC</h2>
+                <p class="karta-komponenty">Intel i3 · 16 GB DDR4</p>
+                <div class="karta-spodok">
+                    <span class="cena-text">449 €</span>
+                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
+                </div>
+            </article>
+
+            <article class="karta">
+                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
+                <h2>Herný Dragon Pro</h2>
+                <p class="karta-komponenty">RTX 5070 · 64 GB DDR5</p>
+                <div class="karta-spodok">
+                    <span class="cena-text">2089 €</span>
+                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
+                </div>
+            </article>
+        </div>
+
+        <nav class="strankovanie" aria-label="Stránkovanie">
+            <a href="#" class="tlacidlo">&lt;</a>
+            <a href="#" class="tlacidlo aktivna">1</a>
+            <a href="#" class="tlacidlo">2</a>
+            <a href="#" class="tlacidlo">3</a>
+            <a href="#" class="tlacidlo">&gt;</a>
+        </nav>
+    </section>
+
+</div>
