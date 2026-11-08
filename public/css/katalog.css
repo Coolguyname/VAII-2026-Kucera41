@@ -165,3 +165,8 @@
         grid-template-columns: 1fr;
     }
 }
+.karta-foto {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}

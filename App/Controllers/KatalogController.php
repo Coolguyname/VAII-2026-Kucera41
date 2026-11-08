@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\Pocitac;
+
 use Framework\Core\BaseController;
 use Framework\Http\Request;
 use Framework\Http\Responses\Response;
@@ -25,6 +27,6 @@ class KatalogController extends BaseController
      */
     public function index(Request $request): Response
     {
-        return $this->html();
+        return $this->html(['pocitace' => Pocitac::getAll(orderBy: '`nazov` ASC')]);
     }
 }

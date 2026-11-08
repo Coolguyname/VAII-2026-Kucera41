@@ -1,0 +1,90 @@
+.sprava h1 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+}
+
+.sprava-hlavicka {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.sprava-hlavicka h1 {
+    margin-bottom: 0;
+}
+
+.tabulka-obal {
+    overflow-x: auto;
+}
+
+.tabulka {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabulka th,
+.tabulka td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--farba-okraj);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.tabulka th {
+    background-color: var(--farba-panel);
+}
+
+.bez-zalomenia {
+    white-space: nowrap;
+}
+
+.akcie {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tlacidlo-zmazat {
+    color: #8b0000;
+}
+
+.formular {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 600px;
+}
+
+.formular label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.formular input {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid var(--farba-okraj);
+    border-radius: 4px;
+    font: inherit;
+}
+
+.formular-tlacidla {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 560px) {
+    .tabulka th,
+    .tabulka td {
+        padding: 6px;
+        font-size: 0.9rem;
+    }
+
+    .stlpec-popis {
+        display: none;
+    }
+}

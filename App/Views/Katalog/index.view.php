@@ -1,5 +1,5 @@
 <?php
-
+/** @var \App\Models\Pocitac[] $pocitace */
 /** @var \Framework\Support\LinkGenerator $link */
 ?>
 
@@ -47,7 +47,7 @@
 
     <section class="zoznam">
         <div class="zoznam-hlavicka">
-            <h1>Počítače <span class="pocet">(24)</span></h1>
+            <h1>Počítače <span class="pocet">(<?= count($pocitace) ?>)</span></h1>
             <label class="zoradenie">
                 Zoradiť:
                 <select name="zoradit">
@@ -58,96 +58,26 @@
             </label>
         </div>
 
+        <?php if (count($pocitace) === 0) { ?>
+            <p>V ponuke momentálne nie je žiadny počítač.</p>
+        <?php } ?>
+
         <div class="karty">
-            <article class="karta">
-                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
-                <h2>Herný PC</h2>
-                <p class="karta-komponenty">RTX 4060 · 32 GB DDR5</p>
-                <div class="karta-spodok">
-                    <span class="cena-text">999 €</span>
-                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
-                </div>
-            </article>
-
-            <article class="karta">
-                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
-                <h2>Kancelársky PC</h2>
-                <p class="karta-komponenty">Intel i3 · 16 GB DDR4</p>
-                <div class="karta-spodok">
-                    <span class="cena-text">449 €</span>
-                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
-                </div>
-            </article>
-
-            <article class="karta">
-                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
-                <h2>Herný Dragon Pro</h2>
-                <p class="karta-komponenty">RTX 5070 · 64 GB DDR5</p>
-                <div class="karta-spodok">
-                    <span class="cena-text">2089 €</span>
-                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
-                </div>
-            </article>
-
-            <article class="karta">
-                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
-                <h2>Herný PC</h2>
-                <p class="karta-komponenty">RTX 4060 · 32 GB DDR5</p>
-                <div class="karta-spodok">
-                    <span class="cena-text">999 €</span>
-                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
-                </div>
-            </article>
-
-            <article class="karta">
-                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
-                <h2>Kancelársky PC</h2>
-                <p class="karta-komponenty">Intel i3 · 16 GB DDR4</p>
-                <div class="karta-spodok">
-                    <span class="cena-text">449 €</span>
-                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
-                </div>
-            </article>
-
-            <article class="karta">
-                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
-                <h2>Herný Dragon Pro</h2>
-                <p class="karta-komponenty">RTX 5070 · 64 GB DDR5</p>
-                <div class="karta-spodok">
-                    <span class="cena-text">2089 €</span>
-                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
-                </div>
-            </article>
-
-            <article class="karta">
-                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
-                <h2>Herný PC</h2>
-                <p class="karta-komponenty">RTX 4060 · 32 GB DDR5</p>
-                <div class="karta-spodok">
-                    <span class="cena-text">999 €</span>
-                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
-                </div>
-            </article>
-
-            <article class="karta">
-                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
-                <h2>Kancelársky PC</h2>
-                <p class="karta-komponenty">Intel i3 · 16 GB DDR4</p>
-                <div class="karta-spodok">
-                    <span class="cena-text">449 €</span>
-                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
-                </div>
-            </article>
-
-            <article class="karta">
-                <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
-                <h2>Herný Dragon Pro</h2>
-                <p class="karta-komponenty">RTX 5070 · 64 GB DDR5</p>
-                <div class="karta-spodok">
-                    <span class="cena-text">2089 €</span>
-                    <button class="tlacidlo tlacidlo-male">Do košíka</button>
-                </div>
-            </article>
+            <?php foreach ($pocitace as $pocitac) { ?>
+                <article class="karta">
+                    <?php if ($pocitac->getObrazok()) { ?>
+                        <img src="<?= e($pocitac->getObrazok()) ?>" alt="<?= e($pocitac->getNazov()) ?>" class="karta-obrazok karta-foto">
+                    <?php } else { ?>
+                        <div class="karta-obrazok placeholder"><span class="placeholder-x">&times;</span></div>
+                    <?php } ?>
+                    <h2><?= e($pocitac->getNazov()) ?></h2>
+                    <p class="karta-komponenty"><?= e($pocitac->getPopis()) ?></p>
+                    <div class="karta-spodok">
+                        <span class="cena-text"><?= number_format($pocitac->getCena(), 2, ',', ' ') ?> €</span>
+                        <button class="tlacidlo tlacidlo-male">Do košíka</button>
+                    </div>
+                </article>
+            <?php } ?>
         </div>
 
         <nav class="strankovanie" aria-label="Stránkovanie">

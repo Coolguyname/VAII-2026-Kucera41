@@ -15,6 +15,7 @@ $aktivna = $_GET['c'] ?? 'home';
     <link rel="icon" type="image/png" sizes="32x32" href="<?= $link->asset('favicons/favicon-32x32.png') ?>">
     <link rel="stylesheet" href="<?= $link->asset('css/style.css') ?>">
     <link rel="stylesheet" href="<?= $link->asset('css/katalog.css') ?>">
+    <link rel="stylesheet" href="<?= $link->asset('css/sprava.css') ?>">
 </head>
 <body>
 
@@ -29,6 +30,7 @@ $aktivna = $_GET['c'] ?? 'home';
             <li><a href="<?= $link->url('home.index') ?>" class="<?= $aktivna === 'home' ? 'aktivna' : '' ?>">Domov</a></li>
             <li><a href="<?= $link->url('katalog.index') ?>" class="<?= $aktivna === 'katalog' ? 'aktivna' : '' ?>">Katalóg</a></li>
             <li><a href="#">Moje objednávky</a></li>
+            <li><a href="<?= $link->url('pocitac.index') ?>" class="<?= $aktivna === 'pocitac' ? 'aktivna' : '' ?>">Správa</a></li>
         </ul>
     </nav>
 
