@@ -45,4 +45,9 @@ class Pocitac extends Model
     {
         return $this->obrazok;
     }
+
+    public function getZostavy(): array
+    {
+        return $this->getAllRelated(ZostavaPocitaca::class);
+    }
 }

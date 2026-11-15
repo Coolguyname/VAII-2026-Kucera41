@@ -19,6 +19,7 @@
                 <tr>
                     <th>Názov</th>
                     <th class="stlpec-popis">Popis</th>
+                    <th class="stlpec-komponenty">Komponenty</th>
                     <th>Cena</th>
                     <th>Sklad</th>
                     <th>Akcie</th>
@@ -29,6 +30,11 @@
                     <tr>
                         <td><?= e($pocitac->getNazov()) ?></td>
                         <td class="stlpec-popis"><?= e($pocitac->getPopis()) ?></td>
+                        <td class="stlpec-komponenty">
+                            <?php foreach ($pocitac->getZostavy() as $zostava) { ?>
+                                <div><?= $zostava->getMnozstvo() > 1 ? $zostava->getMnozstvo() . '× ' : '' ?><?= e($zostava->getKomponent()->getNazov()) ?></div>
+                            <?php } ?>
+                        </td>
                         <td class="bez-zalomenia"><?= number_format($pocitac->getCena(), 2, ',', ' ') ?> €</td>
                         <td class="bez-zalomenia"><?= $pocitac->getSklad() ?> ks</td>
                         <td>

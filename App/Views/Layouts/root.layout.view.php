@@ -31,6 +31,7 @@ $aktivna = $_GET['c'] ?? 'home';
             <li><a href="<?= $link->url('katalog.index') ?>" class="<?= $aktivna === 'katalog' ? 'aktivna' : '' ?>">Katalóg</a></li>
             <li><a href="#">Moje objednávky</a></li>
             <li><a href="<?= $link->url('pocitac.index') ?>" class="<?= $aktivna === 'pocitac' ? 'aktivna' : '' ?>">Správa</a></li>
+            <li><a href="<?= $link->url('komponent.index') ?>" class="<?= $aktivna === 'komponent' ? 'aktivna' : '' ?>">Komponenty</a></li>
         </ul>
     </nav>
 

@@ -76,6 +76,34 @@
     gap: 10px;
     margin-top: 20px;
 }
+.formular fieldset {
+    margin-top: 16px;
+    padding: 10px 14px;
+    border: 1px solid var(--farba-okraj);
+    border-radius: 4px;
+}
+
+.formular legend {
+    padding: 0 4px;
+    font-weight: bold;
+}
+
+.mnozstvo-riadok {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+}
+
+.mnozstvo-riadok label {
+    margin-top: 0;
+    font-weight: normal;
+}
+
+.mnozstvo-riadok input {
+    width: 80px;
+}
 
 @media (max-width: 560px) {
     .tabulka th,
@@ -84,7 +112,8 @@
         font-size: 0.9rem;
     }
 
-    .stlpec-popis {
+    .stlpec-popis,
+    .stlpec-komponenty {
         display: none;
     }
 }
